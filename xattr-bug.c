@@ -5,6 +5,16 @@
 
 #define BUFFER_SIZE 1024
 
+// Allow for compilation on OS X for behavior comparison.
+#if __APPLE__ && __MACH__
+#define listxattr(path, name, size) \
+	listxattr(path, name, size, 0)
+#define getxattr(path, name, value, size) \
+	getxattr(path, name, value, size, 0, 0)
+#define setxattr(path, name, value, size) \
+	setxattr(path, name, value, size, 0, 0)
+#endif
+
 void print_attribute_list (char* list, int len);
 void print_each_attribute (char *file, char *list, int len);
 char *next_item(char* list);
