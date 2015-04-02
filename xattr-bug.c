@@ -116,16 +116,16 @@ char *next_item(char* list) {
 void print_buffer (char* buffer, int len) {
 	int i;
 	for (i = 0; i < len; ++i) {
-		// Add indentation for readability
-		if (i % 8 == 0)
+		// Add indentation and grouping for readability
+		if (i % 8 == 0) {
+			if (i > 0)
+				printf("\n");
 			printf("    ");
+		} else {
+			printf(" ");
+		}
 
 		printf("0x%02x", buffer[i]);
-
-		// Break up the lines
-		if ((i + 1) % 8 == 0)
-			printf("\n");
-		else
-			printf(" ");
 	}
+	printf("\n");
 }
