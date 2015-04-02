@@ -37,6 +37,7 @@ int main (int argc, char **argv)
 
 	if (ret == -1) {
 		printf("listxattr() failed: %s\n", strerror(errno));
+		return 2;
 	} else {
 		printf("  List contents:\n");
 		print_attribute_list(list, ret);
