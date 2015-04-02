@@ -2,9 +2,9 @@
 
 CFLAGS := -Wall -Wextra
 
-all: xattr-bug
+all: xattr-test
 
 clean:
-	-rm -f xattr-bug *.o
+	-rm -f xattr-test *.o
 
 .PHONY: clean
