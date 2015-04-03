@@ -17,11 +17,10 @@
 
 void print_attribute_list (char* list, int len);
 void print_each_attribute (char *file, char *list, int len);
-char *next_item(char* list);
+char *next_item (char* list);
 void print_buffer (char* buffer, int len);
 
-int main (int argc, char **argv)
-{
+int main (int argc, char **argv) {
 	char list[BUFFER_SIZE] = {0};
 	int ret;
 
@@ -101,7 +100,7 @@ void print_each_attribute (char *file, char *list, int len) {
  *   list: The beginning of the current item in the list
  * Returns: The beginning of the next item in the list
  */
-char *next_item(char* list) {
+char *next_item (char* list) {
 	while (*(list++));
 	return list;
 }
